@@ -1,6 +1,6 @@
 const boom = require('boom')
 
-const Car = require('../model/Car')
+const Car = require('../models/Car')
 
 // Get Data Models
 
@@ -28,7 +28,7 @@ exports,getSingleCar = async (req, reply) => {
 // Add a new car
 exports.addCar = async (req, reply) => {
     try {
-        const car = new Car(req.body)
+        const car = new Car({ ...req.body})
         return car.save()
     } catch (err) {
         throw boom.boomify(err)

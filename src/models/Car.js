@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const schema = mongoose.Schema;
 const carSchema = new mongoose.Schema({
     title: String,
     brand: String,
